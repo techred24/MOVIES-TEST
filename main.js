@@ -23,17 +23,25 @@ const main = async () => {
     console.log(popularMoviesInformation);
     const fragment = document.createDocumentFragment();
     popularMoviesInformation.forEach(movieInformation => {
-        const { poster_path, original_title } = movieInformation;
+        const { poster_path, original_title, release_date } = movieInformation;
         console.log(original_title)
         console.log(movieInformation)
         const imageMovie = document.createElement('img');
         const card = document.createElement('div');
-        // imageMovie.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
-        imageMovie.src = `https://image.tmdb.org/t/p/original${poster_path}`;
+        imageMovie.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+        // imageMovie.src = `https://image.tmdb.org/t/p/original${poster_path}`;
         imageMovie.alt = original_title;
         imageMovie.className = 'image_movie'
         card.appendChild(imageMovie);
         card.className = "card"
+        const cardFoot = document.createElement('div');
+        const titleMovie = document.createElement('h3');
+        titleMovie.innerText = original_title;
+        cardFoot.appendChild(titleMovie);
+        const movieDateRelease = document.createElement('p');
+        movieDateRelease.innerText = release_date;
+        card.appendChild(cardFoot)
+        card.appendChild(movieDateRelease);
         fragment.appendChild(card);
     });
     document.getElementById('movies_grid').appendChild(fragment);
