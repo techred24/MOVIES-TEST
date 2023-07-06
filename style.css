@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[class$='container'] {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: blueviolet;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.movies_grid {
+    margin: 0 2rem;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+.card {
+    max-width: 15rem;
+}
