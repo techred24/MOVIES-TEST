@@ -25,3 +25,9 @@ img {
 .card {
     max-width: 15rem;
 }
+.rateContainer {
+    position: absolute;
+    background-color: rgb(10, 25, 20);
+    width: 15%;
+    top: 8rem;
+}

@@ -23,7 +23,7 @@ const main = async () => {
     console.log(popularMoviesInformation);
     const fragment = document.createDocumentFragment();
     popularMoviesInformation.forEach(movieInformation => {
-        const { poster_path, original_title, release_date } = movieInformation;
+        const { poster_path, original_title, release_date, vote_average } = movieInformation;
         console.log(original_title)
         console.log(movieInformation)
         const imageMovie = document.createElement('img');
@@ -40,8 +40,16 @@ const main = async () => {
         cardFoot.appendChild(titleMovie);
         const movieDateRelease = document.createElement('p');
         movieDateRelease.innerText = release_date;
+        const rateContainer = document.createElement('div');
+        rateContainer.className = 'rateContainer';
+        const rateBar = document.createElement('div');
+        const popularity = document.createElement('div');
+        popularity.innerText = vote_average
+        rateContainer.appendChild(rateBar);
+        rateBar.appendChild(popularity);
         card.appendChild(cardFoot)
         card.appendChild(movieDateRelease);
+        card.appendChild(rateBar);
         fragment.appendChild(card);
     });
     document.getElementById('movies_grid').appendChild(fragment);
